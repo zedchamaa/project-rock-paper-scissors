@@ -2,7 +2,17 @@
 
 // Create a variable to store the player's selection when prompted
 
-let playerSelection = prompt("Enter Rock, Paper or Scissors", );
+let playerSelection = prompt("Enter rock, paper or scissors", );
+playerSelection = playerSelection.toLowerCase();
+
+if (
+  (playerSelection !== "rock") &&
+  (playerSelection !== "paper") &&
+  (playerSelection !== "scissors")) {
+   alert("Wrong word, check and enter again!");
+  }
+
+console.log(playerSelection);
 
 // Create a function to store the computer's random selection
 
@@ -12,18 +22,27 @@ function computerPlay() {
       return "rock";
     } else if (random === 2) {
       return "paper";
-    } else return "scissors";
+    } else if (random === 3) {
+      return "scissors";
+    }
 }
+
+console.log(computerPlay());
 
 // Create a function to play one round of the game
 
-function playRound(playerSelection, computerPlay) {
-  if (playerSelection === "rock" && computerPlay === "scissors") {
-    return "You Lose! Rock beats Scissors.";
-  } else if (playerSelection === "scissors" && computerPlay === "paper") {
-    return "You Lose! Scissors beat Paper.";
-  } else if (playerSelection === "rock" && computerPlay === "paper") {
-    return "You Lose! Paper beats Rock.";
-  }
-}
+const computerSelection = computerPlay();
 
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "It\'s a tie";
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "You Win!";
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        return "You Win!"; 
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        return "You Win!";
+    } else return "You Lose!"
+  }
+
+console.log(playRound(playerSelection, computerSelection));
