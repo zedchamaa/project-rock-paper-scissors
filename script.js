@@ -12,7 +12,7 @@ if (
    alert("Wrong word, check and enter again!");
   }
 
-console.log(playerSelection);
+console.log("Player: " + playerSelection);
 
 // Create a function to store the computer's random selection
 
@@ -27,22 +27,22 @@ function computerPlay() {
     }
 }
 
-console.log(computerPlay());
-
 // Create a function to play one round of the game
 
 const computerSelection = computerPlay();
+
+console.log("Computer: " + computerSelection);
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It\'s a tie";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win!";
+        return "Player Wins!";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win!"; 
+        return "Player Wins!"; 
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Win!";
-    } else return "You Lose!"
+        return "Player Wins!";
+    } else return "Computer Wins!"
   }
 
 console.log(playRound(playerSelection, computerSelection));
