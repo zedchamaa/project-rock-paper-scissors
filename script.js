@@ -39,7 +39,6 @@ function playerChoice() {
 }
 
 function computerChoice() {
-  // return choices[Math.floor(Math.random() * choices.length)];
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
