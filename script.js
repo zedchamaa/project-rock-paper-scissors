@@ -1,8 +1,8 @@
 // Create variables for player vs computer
 
-let player;
+let playerChoice;
 let playerScore = 0;
-let computer;
+let computerChoice;
 let computerScore = 0;
 
 // Create an array to store the choices
@@ -24,41 +24,41 @@ window.onload = function() {
 // Create a function to select the choices of the player and computer, and then update their score
 
 function selectChoice() {
-  player = this.id;
-  document.getElementById("player-choice").src = player + ".png";
+  playerChoice = this.id;
+  document.getElementById("player-choice").src = playerChoice + ".png";
 
   // random choice for computer
-  computer = choices[Math.floor(Math.random() * 3)];
-  document.getElementById("computer-choice").src = computer + ".png";
+  computerChoice = choices[Math.floor(Math.random() * 3)];
+  document.getElementById("computer-choice").src = computerChoice + ".png";
 
   // check for winner
-  if (player === computer) {
+  if (playerChoice === computerChoice) {
     playerScore += 1;
     computerScore += 1;
   }
 
   else {
-    if (player === "rock") {
-      if (computer === "paper") {
+    if (playerChoice === "rock") {
+      if (computerChoice === "paper") {
         computerScore += 1;
       }
-      else if (computer === "scissors") {
+      else if (computerChoice === "scissors") {
         playerScore += 1;
       }
     }
-    else if (player === "paper") {
-      if (computer === "rock") {
+    else if (playerChoice === "paper") {
+      if (computerChoice === "rock") {
         playerScore += 1;
       }
-      else if (computer === "scissors") {
+      else if (computerChoice === "scissors") {
         computerScore += 1;
       }
     }
-    else if (player === "scissors") {
-      if (computer === "rock") {
+    else if (playerChoice === "scissors") {
+      if (computerChoice === "rock") {
         computerScore += 1;
       }
-      else if (computer === "paper") {
+      else if (computerChoice === "paper") {
         playerScore += 1;
       }
     }
